@@ -1,0 +1,74 @@
+body {
+    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1frOt0MXVh4pOZ0KfCtR-jsLKPjYAA8C8NVrAN-YJCFEHTZk4);
+    font: 1em Tahoma;
+}
+#wrapper {
+    perspective: 900px;
+    margin: 80px;
+}
+ #cube {
+    position: relative;
+     width: 300px;
+     height: 300px;
+     cursor: pointer;
+     transform-origin: 50% 50% -150px;
+     transform-style: preserve-3d;
+ }
+  #cube:hover {
+     animation-name: open;
+     animation-duration: 6s;
+     animation-iteration-count: infinite;
+     animation-timing-function: linear;
+    
+ }
+.side {
+    width: 300px;
+    height: 300px;
+    line-height: 300px;
+    position: absolute;
+    font-size: 5em;
+    background: radial-gradient(rgba(0,0,0,.1),rgba(0,0,0,.6));
+    border: 10px solid #0ff;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    transform-origin: 50% 50% -150px;
+}
+#side2 {
+    transform: rotateY(90deg);
+}
+#side2:hover {
+    animation-name: close;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+}
+#side3 {
+    transform: rotateY(-90deg);
+}
+#side4 {
+    transform: rotateX(90deg);
+}
+#side5 {
+    transform: rotateX(-90deg);
+}
+#side6 {
+    transform: rotateY(180deg);
+}
+@keyframes open {
+    0% {
+        transform: rotate3d(1,1,1,0deg)
+    }
+    100% {
+        transform: rotate3d(1,1,1,360deg)
+    }
+}
+@keyframes close {
+    0% {
+        transform: rotateY(70deg);
+    }
+    100% {
+        transform: rotateY(110deg);
+    }
+}
